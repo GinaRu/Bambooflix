@@ -11,15 +11,25 @@ import AlamofireImage
 
 class MoviesVC: UITableViewController {
     
-    private let reuseIdentifier = String(describing: moviesViewCell.self)
+    
+    
+    let moviesManager = MoviesManager()
+    
+    private let reuseIdentifier = String(describing: MoviesViewCell.self)
     
     @IBOutlet var moviesTableView: UITableView!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: reuseIdentifier, bundle: nil)
         moviesTableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
+        moviesManager.fetchMovieDiscover(success: { (movies) in
+                    })
+        
+        moviesManager.fetchMovieDetails(movieId: 399566, success: { (movie) in
+        print(movie)
+    })
+
 
     }
     
@@ -32,7 +42,7 @@ class MoviesVC: UITableViewController {
      }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return 5
     }
     
      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,7 +51,9 @@ class MoviesVC: UITableViewController {
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MoviesViewCell
+//cell.configure(with: )
+                    
         return cell
              }
 
@@ -62,12 +74,6 @@ class MoviesVC: UITableViewController {
                 return "Para disfrutar en familia"
         } else if section == 4 {
                 return "Aventuras"
-        } else if section == 5 {
-                return "Ciencia ficción"
-        } else if section == 6 {
-                return "Drama"
-        } else if section == 7 {
-                return "Thriller"
             } else {
         return "Títol de secció"
         }

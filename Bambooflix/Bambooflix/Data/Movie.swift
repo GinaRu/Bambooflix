@@ -6,9 +6,6 @@
 //
 
 import Foundation
-    
-    struct Movie: Decodable {
 
-    }
 
 

@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="166" id="KGk-i7-Jjw" customClass="moviesViewCell" customModule="Bambooflix" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="166" id="KGk-i7-Jjw" customClass="MoviesViewCell" customModule="Bambooflix" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="530" height="166"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -88,6 +88,14 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="boto1" destination="a3U-zp-sUo" id="x11-7r-39z"/>
+                <outlet property="boto2" destination="6kB-qW-8bV" id="Gyz-e2-OWv"/>
+                <outlet property="boto3" destination="cSs-dC-OMN" id="GyP-rB-hrs"/>
+                <outlet property="boto4" destination="M8f-fH-Mhm" id="k5X-dz-p0u"/>
+                <outlet property="boto5" destination="DJX-2W-Tla" id="5X6-fE-hEW"/>
+                <outlet property="boto6" destination="IRF-Ip-CIx" id="HSm-Fe-yhv"/>
+            </connections>
             <point key="canvasLocation" x="242.0289855072464" y="140.625"/>
         </tableViewCell>
     </objects>
