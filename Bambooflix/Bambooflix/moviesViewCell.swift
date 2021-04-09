@@ -18,13 +18,20 @@ class MoviesViewCell: UITableViewCell {
     @IBOutlet var boto6: UIButton!
     
     
-    func configure(with movies: MovieList) {
-        for movie in movies.results {
-            if let url = URL(string: Endpoints.movieImage.rawValue + movie.posterPath) {
-                boto1.af.setImage(for: .normal, url: url)
-            }
+    func configure(with movies: [Movie]) {
+        setImageAt(movie: movies[0], button: boto1)
+        setImageAt(movie: movies[1], button: boto2)
+        setImageAt(movie: movies[2], button: boto3)
+        setImageAt(movie: movies[3], button: boto4)
+        setImageAt(movie: movies[4], button: boto5)
+        setImageAt(movie: movies[5], button: boto6)
+    
+    }
+    
+    func setImageAt(movie: Movie, button: UIButton) {
+        if let url = URL(string: Endpoints.movieImage.rawValue + movie.posterPath) {
+            button.af.setImage(for: .normal, url: url)
         }
-        
     }
 
     

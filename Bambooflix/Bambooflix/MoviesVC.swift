@@ -10,8 +10,8 @@ import Alamofire
 import AlamofireImage
 
 class MoviesVC: UITableViewController {
-    
-    
+
+    private var movies: [Movie]?
     
     let moviesManager = MoviesManager()
     
@@ -24,12 +24,15 @@ class MoviesVC: UITableViewController {
         let nib = UINib(nibName: reuseIdentifier, bundle: nil)
         moviesTableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
         moviesManager.fetchMovieDiscover(success: { (movies) in
+            self.movies = movies.results
+            self.tableView.reloadData()
+            
                     })
         
         moviesManager.fetchMovieDetails(movieId: 399566, success: { (movie) in
-        print(movie)
-    })
 
+    })
+        
 
     }
     
@@ -51,9 +54,12 @@ class MoviesVC: UITableViewController {
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! MoviesViewCell
-//cell.configure(with: )
-                    
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
+        let moviesCell = cell as! MoviesViewCell
+        if let movies = self.movies {
+            moviesCell.configure(with: movies)
+        }
+  
         return cell
              }
 
