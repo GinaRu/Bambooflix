@@ -11,62 +11,53 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="166" id="KGk-i7-Jjw" customClass="MoviesViewCell" customModule="Bambooflix" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="530" height="166"/>
+            <rect key="frame" x="0.0" y="0.0" width="632" height="166"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="530" height="166"/>
+                <rect key="frame" x="0.0" y="0.0" width="632" height="166"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OnJ-i3-jFV">
-                        <rect key="frame" x="0.0" y="0.0" width="530" height="166"/>
+                        <rect key="frame" x="0.0" y="0.0" width="632" height="166"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="n7Z-iM-obs">
-                                <rect key="frame" x="0.0" y="0.0" width="606" height="166"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="n7Z-iM-obs">
+                                <rect key="frame" x="0.0" y="0.0" width="683.5" height="166"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3U-zp-sUo">
-                                        <rect key="frame" x="8" y="8" width="95" height="150"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3U-zp-sUo">
+                                        <rect key="frame" x="8" y="0.0" width="108" height="166"/>
                                         <color key="backgroundColor" red="1" green="0.57097730560000004" blue="0.1965860029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="95" id="sq6-jh-bLv"/>
-                                        </constraints>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kB-qW-8bV">
-                                        <rect key="frame" x="107" y="8" width="95" height="150"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kB-qW-8bV">
+                                        <rect key="frame" x="120" y="0.0" width="108" height="166"/>
                                         <color key="backgroundColor" red="1" green="0.54552437890000005" blue="0.4110569879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="95" id="KRV-uC-eQW"/>
-                                        </constraints>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSs-dC-OMN">
-                                        <rect key="frame" x="206" y="8" width="95" height="150"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSs-dC-OMN">
+                                        <rect key="frame" x="232" y="0.0" width="107.5" height="166"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="95" id="kzv-rQ-MGG"/>
-                                        </constraints>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8f-fH-Mhm">
-                                        <rect key="frame" x="305" y="8" width="95" height="150"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8f-fH-Mhm">
+                                        <rect key="frame" x="343.5" y="0.0" width="108" height="166"/>
                                         <color key="backgroundColor" red="0.24692667779999999" green="0.40065831219999998" blue="0.25087358749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="95" id="G1G-OU-IzO"/>
-                                        </constraints>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJX-2W-Tla">
-                                        <rect key="frame" x="404" y="8" width="95" height="150"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJX-2W-Tla">
+                                        <rect key="frame" x="455.5" y="0.0" width="108" height="166"/>
                                         <color key="backgroundColor" red="0.61630239600000003" green="1" blue="0.62615345759999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="95" id="6Vf-jm-wsn"/>
-                                        </constraints>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-Ip-CIx">
-                                        <rect key="frame" x="503" y="8" width="95" height="150"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-Ip-CIx">
+                                        <rect key="frame" x="567.5" y="0.0" width="108" height="166"/>
                                         <color key="backgroundColor" systemColor="linkColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="95" id="nMZ-cG-5SO"/>
-                                        </constraints>
                                     </button>
                                 </subviews>
-                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                <constraints>
+                                    <constraint firstItem="a3U-zp-sUo" firstAttribute="width" secondItem="n7Z-iM-obs" secondAttribute="height" id="Gre-nR-jb8"/>
+                                    <constraint firstItem="a3U-zp-sUo" firstAttribute="width" secondItem="n7Z-iM-obs" secondAttribute="height" multiplier="0.65" id="jfa-0u-v41"/>
+                                </constraints>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="0.0" leading="8" bottom="0.0" trailing="8"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Gre-nR-jb8"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <constraints>
@@ -95,8 +86,10 @@
                 <outlet property="boto4" destination="M8f-fH-Mhm" id="k5X-dz-p0u"/>
                 <outlet property="boto5" destination="DJX-2W-Tla" id="5X6-fE-hEW"/>
                 <outlet property="boto6" destination="IRF-Ip-CIx" id="HSm-Fe-yhv"/>
+                <outlet property="constraintBoto" destination="jfa-0u-v41" id="08a-9W-aBG"/>
+                <outlet property="constraintBotoCuadrada" destination="Gre-nR-jb8" id="gBU-sU-xlh"/>
             </connections>
-            <point key="canvasLocation" x="242.0289855072464" y="140.625"/>
+            <point key="canvasLocation" x="315.94202898550725" y="140.625"/>
         </tableViewCell>
     </objects>
     <resources>

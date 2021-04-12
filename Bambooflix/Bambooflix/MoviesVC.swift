@@ -57,11 +57,11 @@ class MoviesVC: UITableViewController {
         if let movies = movies {
             switch section {
             case 0:
-                moviesSorted = movies.sorted{ $0.popularity > $1.popularity}
+                moviesSorted = movies.sorted { $0.popularity > $1.popularity}
             case 1:
-                moviesSorted = movies.sorted{ $0.releaseDate > $1.releaseDate}
+                moviesSorted = movies.sorted { $0.releaseDate > $1.releaseDate}
             case 2:
-                moviesSorted = movies.sorted{ $0.voteAverage > $1.voteAverage }
+                moviesSorted = movies.sorted { $0.voteAverage > $1.voteAverage }
             case 3:
                 moviesSorted = movies.shuffled()
             case 4:
@@ -79,41 +79,92 @@ class MoviesVC: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         let moviesCell = cell as! MoviesViewCell
         
-        
         let section = indexPath.section
-        moviesCell.configure(with: moviesForSection(section))
         
+        guard let sectionType: SectionType = SectionType(rawValue: section) else {
+            return cell
+        }
+        moviesCell.configure(with: moviesForSection(section), isRounded: sectionType.isCircular)
+     
+//        if section == 2 {
+//            moviesCell.configure(with: moviesForSection(section), isRounded: true)
+//
+//        } else {
+//        moviesCell.configure(with: moviesForSection(section), isRounded: false)
+//        }
         return cell
      }
     
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-         return 160
-     }
-    
+        
+        guard let sectionType: SectionType = SectionType(rawValue: indexPath.section) else {
+            return 150
+        }
+        return sectionType.rowHeight
+  
+    }
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 0: return "Populares"
-        case 1: return "Recientes"
-        case 2: return "Más votadas"
-        case 3: return "Películas que te gustarán"
-        case 4: return "Cine internacional"
-        default:
-            return "Próximamente....."
+        guard let sectionType: SectionType = SectionType(rawValue: section) else {
+            return "missing title"
         }
+        return sectionType.name
+
 
     }
 
-
-
-    
-    
-    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
     
-
 }
 
+extension MoviesVC {
+    enum SectionType: Int, CaseIterable {
+        case mostPopular, recentlyAdded, mostVoted, discover, internationalMovies
+        
+        var name: String {
+            switch self {
+            case .mostPopular:
+                return "  Populares"
+            case .recentlyAdded:
+                return "  Recientes"
+            case .mostVoted:
+                return "  Más votadas"
+            case .discover:
+                return "  Películas que te gustarán"
+            case .internationalMovies:
+                return "  Cine internacional"
+            }
+        }
+        
+        var rowHeight: CGFloat {
+            switch self {
+            case .mostPopular:
+                return 300
+            case .discover:
+                return 150
+            case .recentlyAdded:
+                return 150
+            case .mostVoted:
+                return 120
+            case .internationalMovies:
+                return 150
+            }
+        }
+        var isCircular: Bool {
+            switch self {
+            case .mostPopular: return false
+            case .recentlyAdded:
+                return false
+            case .mostVoted:
+                return true
+            case .discover:
+                return false
+            case .internationalMovies:
+                return false
+            }
+        }
+    }
+}
