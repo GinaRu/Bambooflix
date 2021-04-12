@@ -34,15 +34,8 @@ class MoviesVC: UITableViewController {
 
     }
     
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         let selectedPosition: Int = indexPath.row
-        
-        
-     performSegue(withIdentifier: "SegueToDetail", sender: nil)
-         
-         print("Has seleccionado la fila \(selectedPosition)")
-     }
+    //performSegue(withIdentifier: "SegueToDetail", sender: nil)
+ 
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 5
@@ -85,13 +78,9 @@ class MoviesVC: UITableViewController {
             return cell
         }
         moviesCell.configure(with: moviesForSection(section), isRounded: sectionType.isCircular)
+        moviesCell.delegate = self
      
-//        if section == 2 {
-//            moviesCell.configure(with: moviesForSection(section), isRounded: true)
-//
-//        } else {
-//        moviesCell.configure(with: moviesForSection(section), isRounded: false)
-//        }
+
         return cell
      }
     
@@ -121,6 +110,7 @@ class MoviesVC: UITableViewController {
 }
 
 extension MoviesVC {
+    
     enum SectionType: Int, CaseIterable {
         case mostPopular, recentlyAdded, mostVoted, discover, internationalMovies
         
@@ -167,4 +157,16 @@ extension MoviesVC {
             }
         }
     }
+    
 }
+
+extension MoviesVC: MoviesViewCellDelegate {
+    func didSelectMovie(movieId: Int) {
+        MoviesViewModel.selectedMovieId = movieId
+        performSegue(withIdentifier: "SegueToDetail", sender: nil)
+    }
+    
+    
+}
+
+

@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="297" y="21"/>
         </scene>
-        <!--View Controller-->
+        <!--DetailVC-->
         <scene sceneID="2XK-pF-Ai9">
             <objects>
-                <viewController id="rcj-qf-heg" sceneMemberID="viewController">
+                <viewController id="rcj-qf-heg" customClass="DetailVC" customModule="Bambooflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3EY-iY-v3A">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,6 +64,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="J67-zc-jMe"/>
+                    <connections>
+                        <outlet property="labelTest" destination="jVV-2e-ptD" id="5VE-MA-69T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0fX-pJ-qcK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

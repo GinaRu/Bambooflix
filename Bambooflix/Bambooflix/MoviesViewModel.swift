@@ -8,6 +8,7 @@
 import Foundation
 
 class MoviesViewModel {
-static var selectedMovie: Movie?
-
+    
+static var selectedMovieId: Int?
+    
 }
