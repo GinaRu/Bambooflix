@@ -26,19 +26,19 @@ class MoviesVC: UITableViewController {
         moviesManager.fetchMovieDiscover(success: { (movies) in
             self.movies = movies.results
             self.tableView.reloadData()
-            
                     })
         
         moviesManager.fetchMovieDetails(movieId: 399566, success: { (movie) in
-
     })
         
 
     }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          let selectedPosition: Int = indexPath.row
-   
+        
+        
      performSegue(withIdentifier: "SegueToDetail", sender: nil)
          
          print("Has seleccionado la fila \(selectedPosition)")
@@ -52,38 +52,61 @@ class MoviesVC: UITableViewController {
          return 1
      }
     
+    func moviesForSection(_ section: Int) -> [Movie]  {
+        var moviesSorted = [Movie]()
+        if let movies = movies {
+            switch section {
+            case 0:
+                moviesSorted = movies.sorted{ $0.popularity > $1.popularity}
+            case 1:
+                moviesSorted = movies.sorted{ $0.releaseDate > $1.releaseDate}
+            case 2:
+                moviesSorted = movies.sorted{ $0.voteAverage > $1.voteAverage }
+            case 3:
+                moviesSorted = movies.shuffled()
+            case 4:
+                moviesSorted = movies.filter {$0.originalLanguage != "en"}
+                
+            default:
+                moviesSorted = movies
+            }
+        }
+      return moviesSorted
+    }
+    
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         let moviesCell = cell as! MoviesViewCell
-        if let movies = self.movies {
-            moviesCell.configure(with: movies)
-        }
-  
+        
+        
+        let section = indexPath.section
+        moviesCell.configure(with: moviesForSection(section))
+        
         return cell
-             }
-
-  
+     }
+    
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
          return 160
      }
     
 
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Películas que podrían gustarte"
-        } else if section == 1 {
-                return "Acción"
-        } else if section == 2 {
-                return "Clásicos de toda la vida"
-        } else if section == 3 {
-                return "Para disfrutar en familia"
-        } else if section == 4 {
-                return "Aventuras"
-            } else {
-        return "Títol de secció"
+        switch section {
+        case 0: return "Populares"
+        case 1: return "Recientes"
+        case 2: return "Más votadas"
+        case 3: return "Películas que te gustarán"
+        case 4: return "Cine internacional"
+        default:
+            return "Próximamente....."
         }
+
     }
+
+
+
     
     
     
