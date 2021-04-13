@@ -21,6 +21,8 @@
 		05C0183E26207F5B0087A217 /* MoviesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C0183D26207F5B0087A217 /* MoviesManager.swift */; };
 		05C0184226207F840087A217 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C0184126207F840087A217 /* Endpoints.swift */; };
 		05C01846262088AF0087A217 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C01845262088AE0087A217 /* MovieDetail.swift */; };
+		05CA31A52625B83C00C2416B /* ProfileSelectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CA31A42625B83C00C2416B /* ProfileSelectionVC.swift */; };
+		05CA31A82625B85B00C2416B /* ProfileEditionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CA31A72625B85B00C2416B /* ProfileEditionVC.swift */; };
 		18B28DB7CE54800D1A81384B /* Pods_Bambooflix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9190C57E88801919432968A8 /* Pods_Bambooflix.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +43,8 @@
 		05C0183D26207F5B0087A217 /* MoviesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesManager.swift; sourceTree = "<group>"; };
 		05C0184126207F840087A217 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		05C01845262088AE0087A217 /* MovieDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
+		05CA31A42625B83C00C2416B /* ProfileSelectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectionVC.swift; sourceTree = "<group>"; };
+		05CA31A72625B85B00C2416B /* ProfileEditionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditionVC.swift; sourceTree = "<group>"; };
 		7CE52892A8E4E3DA647ED44B /* Pods-Bambooflix.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bambooflix.debug.xcconfig"; path = "Target Support Files/Pods-Bambooflix/Pods-Bambooflix.debug.xcconfig"; sourceTree = "<group>"; };
 		9190C57E88801919432968A8 /* Pods_Bambooflix.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bambooflix.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0CF37A555EBA77FC492D61D /* Pods-Bambooflix.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bambooflix.release.xcconfig"; path = "Target Support Files/Pods-Bambooflix/Pods-Bambooflix.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 				0584A5812624895C001C272A /* DetailVC.swift */,
 				056A85F7261DEF6400675FE2 /* MoviesViewModel.swift */,
 				0542DDE7261DCA6300739642 /* MoviesViewCell.swift */,
+				05CA31A42625B83C00C2416B /* ProfileSelectionVC.swift */,
+				05CA31A72625B85B00C2416B /* ProfileEditionVC.swift */,
 				0542DDE8261DCA6300739642 /* MoviesViewCell.xib */,
 				050757A8261DB8DF00B012EA /* Main.storyboard */,
 				05C0183C26207F150087A217 /* Managers */,
@@ -257,6 +263,7 @@
 				050757A7261DB8DF00B012EA /* MoviesVC.swift in Sources */,
 				0542DDE9261DCA6300739642 /* MoviesViewCell.swift in Sources */,
 				056A85FC261DF01C00675FE2 /* MovieList.swift in Sources */,
+				05CA31A82625B85B00C2416B /* ProfileEditionVC.swift in Sources */,
 				05C01846262088AF0087A217 /* MovieDetail.swift in Sources */,
 				05C0183E26207F5B0087A217 /* MoviesManager.swift in Sources */,
 				0584A5822624895C001C272A /* DetailVC.swift in Sources */,
@@ -264,6 +271,7 @@
 				050757A5261DB8DF00B012EA /* SceneDelegate.swift in Sources */,
 				05C0184226207F840087A217 /* Endpoints.swift in Sources */,
 				056A85F8261DEF6500675FE2 /* MoviesViewModel.swift in Sources */,
+				05CA31A52625B83C00C2416B /* ProfileSelectionVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
