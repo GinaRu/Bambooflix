@@ -10,7 +10,10 @@ import UIKit
 
 class ProfileEditionVC: UIViewController {
     
+    
+    
     @IBAction func cancelarButton(_ sender: UIBarButtonItem) {
+       
     }
     
     @IBAction func guardarButton(_ sender: UIBarButtonItem) {
@@ -23,6 +26,7 @@ class ProfileEditionVC: UIViewController {
     @IBOutlet var nameTexfield: UITextField!
     
     @IBAction func eliminarButton(_ sender: Any) {
+        // pop up alert
     }
     
     
