@@ -12,12 +12,12 @@ import AlamofireImage
 
 class DetailVC: UIViewController {
     
-    @IBOutlet var labelTest: UILabel!
+
     
     override func viewDidLoad() {
-        if let text = MoviesViewModel.selectedMovieId {
-        labelTest.text = String(text)
-        }
+//        if let text = MoviesViewModel.selectedMovieId {
+//        labelTest.text = String(text)
+//        }
     }
 
 }
