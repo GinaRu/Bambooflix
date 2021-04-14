@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 
-struct Profile {
+struct Profile: Codable {
     let id: Int
     let name: String
-    let image: UIImage
+    let imageName: String
+    
 }

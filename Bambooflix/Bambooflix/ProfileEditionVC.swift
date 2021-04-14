@@ -10,7 +10,7 @@ import UIKit
 
 class ProfileEditionVC: UIViewController {
     
-    
+    let profileManager = ProfileManager()
     
     @IBAction func cancelarButton(_ sender: UIBarButtonItem) {
        
