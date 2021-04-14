@@ -433,6 +433,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editarButtonOutlet" destination="Crh-Dx-6Cm" id="Kpw-bv-5UO"/>
+                        <outlet property="listoButtonOutlet" destination="3oc-BH-9yG" id="3qK-As-4ky"/>
                         <outletCollection property="nombrePerfilLabel" destination="QfA-JC-7kq" collectionClass="NSMutableArray" id="UVD-bv-Ubt"/>
                         <outletCollection property="nombrePerfilLabel" destination="QmK-tu-LJJ" collectionClass="NSMutableArray" id="ARi-mz-kGv"/>
                         <outletCollection property="nombrePerfilLabel" destination="sXH-FU-Ijy" collectionClass="NSMutableArray" id="7YG-Zi-hG7"/>

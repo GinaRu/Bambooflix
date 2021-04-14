@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0502660E2626D05300AC3A7E /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0502660D2626D05200AC3A7E /* ProfileManager.swift */; };
+		05026613262728A000AC3A7E /* BarButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05026612262728A000AC3A7E /* BarButtonExtension.swift */; };
 		050757A3261DB8DF00B012EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050757A2261DB8DF00B012EA /* AppDelegate.swift */; };
 		050757A5261DB8DF00B012EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050757A4261DB8DF00B012EA /* SceneDelegate.swift */; };
 		050757A7261DB8DF00B012EA /* MoviesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050757A6261DB8DF00B012EA /* MoviesVC.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		0502660D2626D05200AC3A7E /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		05026612262728A000AC3A7E /* BarButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonExtension.swift; sourceTree = "<group>"; };
 		0507579F261DB8DF00B012EA /* Bambooflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bambooflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		050757A2261DB8DF00B012EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		050757A4261DB8DF00B012EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		050266112627286500AC3A7E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				05026612262728A000AC3A7E /* BarButtonExtension.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		05075796261DB8DE00B012EA = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 		050757A1261DB8DF00B012EA /* Bambooflix */ = {
 			isa = PBXGroup;
 			children = (
+				050266112627286500AC3A7E /* Common */,
 				050757A2261DB8DF00B012EA /* AppDelegate.swift */,
 				050757A4261DB8DF00B012EA /* SceneDelegate.swift */,
 				050757AB261DB8E900B012EA /* Assets.xcassets */,
@@ -270,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				050757A7261DB8DF00B012EA /* MoviesVC.swift in Sources */,
+				05026613262728A000AC3A7E /* BarButtonExtension.swift in Sources */,
 				0502660E2626D05300AC3A7E /* ProfileManager.swift in Sources */,
 				0542DDE9261DCA6300739642 /* MoviesViewCell.swift in Sources */,
 				056A85FC261DF01C00675FE2 /* MovieList.swift in Sources */,
