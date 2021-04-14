@@ -314,6 +314,9 @@
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AÑADIR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QfA-JC-7kq">
                                                         <rect key="frame" x="0.0" y="105" width="106" height="20.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="106" id="qeW-hm-YtT"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -337,6 +340,9 @@
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AÑADIR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmK-tu-LJJ">
                                                         <rect key="frame" x="0.0" y="105" width="106" height="20.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="106" id="H2J-r1-4HK"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -365,6 +371,9 @@
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AÑADIR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXH-FU-Ijy">
                                                         <rect key="frame" x="0.0" y="105" width="106" height="20.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="106" id="Ejg-LB-qtG"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -388,6 +397,9 @@
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AÑADIR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTd-Sh-SSt">
                                                         <rect key="frame" x="0.0" y="105" width="106" height="20.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="106" id="9qV-qg-wdI"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -425,7 +437,11 @@
                         <outletCollection property="nombrePerfilLabel" destination="QmK-tu-LJJ" collectionClass="NSMutableArray" id="ARi-mz-kGv"/>
                         <outletCollection property="nombrePerfilLabel" destination="sXH-FU-Ijy" collectionClass="NSMutableArray" id="7YG-Zi-hG7"/>
                         <outletCollection property="nombrePerfilLabel" destination="VTd-Sh-SSt" collectionClass="NSMutableArray" id="zm4-az-h54"/>
-                        <segue destination="VnI-ku-GkZ" kind="show" id="fn2-Pb-Ivh"/>
+                        <outletCollection property="buttonsOutlet" destination="MHt-9B-NNt" collectionClass="NSMutableArray" id="SQa-b6-eJn"/>
+                        <outletCollection property="buttonsOutlet" destination="iZd-kK-r0D" collectionClass="NSMutableArray" id="0TA-4V-lKo"/>
+                        <outletCollection property="buttonsOutlet" destination="NlV-wW-mqb" collectionClass="NSMutableArray" id="6VA-9N-aCj"/>
+                        <outletCollection property="buttonsOutlet" destination="KKe-Hl-TT7" collectionClass="NSMutableArray" id="Naw-0J-P4P"/>
+                        <segue destination="VnI-ku-GkZ" kind="show" identifier="segueToEditProfile" id="fn2-Pb-Ivh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TB6-jC-Ne2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
