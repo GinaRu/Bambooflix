@@ -14,26 +14,9 @@ class ProfileSelectionVC: UIViewController {
     private var currentProfiles: [Profile] = []
     private var isEditModeEnabled: Bool = false
     
-    @IBAction func listoButton(_ sender: UIBarButtonItem) {
-        listoButtonOutlet.hide()
-        editarButtonOutlet.show()
-        isEditModeEnabled = false
-        for p in currentProfiles {
-            print(p.name)
-        }
-    }
-    
-    @IBAction func editarButton(_ sender: UIBarButtonItem) {
-        listoButtonOutlet.show()
-        editarButtonOutlet.hide()
-        isEditModeEnabled = true
-    }
-  
-
-    
-    @IBAction func añadirPerfilTouched(_ sender: UIButton) {
-        let profile = currentProfiles.first{$0.id == sender.tag}
-        ProfileViewModel.selectedProfileId = sender.tag
+    func configureNavigationProfile(_ sender: Int) {
+        let profile = currentProfiles.first{$0.id == sender}
+        ProfileViewModel.selectedProfileId = sender
         
         if isEditModeEnabled == true && profile != nil{
             performSegue(withIdentifier: "segueToEditProfile", sender: nil)
@@ -42,17 +25,7 @@ class ProfileSelectionVC: UIViewController {
             
         }
     }
-    
-    
-    @IBOutlet var buttonsOutlet: [UIButton]!
-    
-    
-    @IBOutlet var listoButtonOutlet: UIBarButtonItem!
-    @IBOutlet var editarButtonOutlet: UIBarButtonItem!
-    
-    @IBOutlet var nombrePerfilLabel: [UILabel]!
-    
-    func configureProfileButtons() {
+    func configureProfilesBeforeReading() {
         for l in nombrePerfilLabel {
             l.text = "AÑADIR"
         }
@@ -60,8 +33,9 @@ class ProfileSelectionVC: UIViewController {
             let image = UIImage(systemName: "plus")
             b.setImage(image, for: .normal)
         }
-        
-
+    }
+    func configureProfileButtons() {
+        configureProfilesBeforeReading()
         currentProfiles = profileManager.readProfiles()
         for p in currentProfiles {
             if p.id == nombrePerfilLabel[p.id].tag {
@@ -74,6 +48,28 @@ class ProfileSelectionVC: UIViewController {
  
             }
         }
+    
+    @IBOutlet var buttonsOutlet: [UIButton]!
+    @IBOutlet var listoButtonOutlet: UIBarButtonItem!
+    @IBOutlet var editarButtonOutlet: UIBarButtonItem!
+    @IBOutlet var nombrePerfilLabel: [UILabel]!
+    
+    @IBAction func listoButton(_ sender: UIBarButtonItem) {
+        listoButtonOutlet.hide()
+        editarButtonOutlet.show()
+        isEditModeEnabled = false
+    }
+    
+    @IBAction func editarButton(_ sender: UIBarButtonItem) {
+        listoButtonOutlet.show()
+        editarButtonOutlet.hide()
+        isEditModeEnabled = true
+    }
+    
+    @IBAction func añadirPerfilTouched(_ sender: UIButton) {
+        configureNavigationProfile(sender.tag)
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         editarButtonOutlet.show()
         listoButtonOutlet.hide()
