@@ -10,5 +10,6 @@ import Foundation
 class MoviesViewModel {
     
 static var selectedMovieId: Int?
+static var selectedProfile: Profile?
     
 }

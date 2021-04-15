@@ -22,7 +22,9 @@ class ProfileSelectionVC: UIViewController {
             performSegue(withIdentifier: "segueToEditProfile", sender: nil)
         } else if isEditModeEnabled == false && profile == nil {
             performSegue(withIdentifier: "segueToEditProfile", sender: nil)
-            
+        } else if isEditModeEnabled == false && profile != nil {
+            MoviesViewModel.selectedProfile = profile
+            performSegue(withIdentifier: "segueToMovies", sender: nil)
         }
     }
     func configureProfilesBeforeReading() {

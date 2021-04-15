@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nnT-U5-sB2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xp5-rF-hMW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -33,9 +33,17 @@
                             <outlet property="delegate" destination="gzf-tC-1kL" id="Mzi-hi-BQf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Movies" id="938-n6-G3i"/>
+                    <navigationItem key="navigationItem" title="Movies" id="938-n6-G3i">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.crop.circle" catalog="system" style="plain" id="fIL-9v-Jy5">
+                            <inset key="imageInsets" minX="0.0" minY="4" maxX="-15" maxY="-5"/>
+                            <connections>
+                                <segue destination="nnT-U5-sB2" kind="presentation" identifier="segueToSelectionProfile" modalPresentationStyle="fullScreen" id="rww-Mf-OOj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="moviesTableView" destination="nYs-hn-DiI" id="Z41-zD-2oJ"/>
+                        <outlet property="profileButton" destination="fIL-9v-Jy5" id="oxO-ad-zl0"/>
                         <segue destination="rcj-qf-heg" kind="show" identifier="SegueToDetail" id="Ygl-yU-Jv2"/>
                     </connections>
                 </tableViewController>
@@ -51,27 +59,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="kji-4b-ftW">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="kji-4b-ftW">
                                 <rect key="frame" x="5" y="93" width="404" height="764"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPD-Ge-dm7">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="180"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="227.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="180" id="3BP-xG-xrq"/>
+                                            <constraint firstAttribute="width" secondItem="aPD-Ge-dm7" secondAttribute="height" multiplier="16:9" id="0V0-Jf-uGO"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Títol película hunuhbuy u ubuyunun uniu" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z59-t1-aw1">
-                                        <rect key="frame" x="0.0" y="195" width="404" height="74"/>
+                                        <rect key="frame" x="0.0" y="238.5" width="404" height="67"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="U0c-Mx-1bE"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="31"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="edB-7Z-oKR">
-                                        <rect key="frame" x="0.0" y="284" width="404" height="20.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="edB-7Z-oKR">
+                                        <rect key="frame" x="0.0" y="316.5" width="404" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularidad: 7618" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBg-Qh-vzy">
                                                 <rect key="frame" x="0.0" y="0.0" width="133.5" height="20.5"/>
@@ -117,7 +125,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JDw-MD-Zqp">
-                                        <rect key="frame" x="0.0" y="319.5" width="404" height="80"/>
+                                        <rect key="frame" x="0.0" y="348" width="404" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55m-2X-Izf">
                                                 <rect key="frame" x="0.0" y="0.0" width="404" height="35"/>
@@ -144,10 +152,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-JG-1kN">
-                                        <rect key="frame" x="0.0" y="414.5" width="404" height="304.5"/>
+                                        <rect key="frame" x="0.0" y="439" width="404" height="284"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kNA-cW-EMD">
-                                                <rect key="frame" x="0.0" y="0.0" width="404" height="254.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="404" height="234"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="wqi-vR-iqQ"/>
@@ -158,7 +166,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Géneros: Action, Science Fiction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcM-W4-WoP">
-                                                <rect key="frame" x="0.0" y="259.5" width="404" height="20"/>
+                                                <rect key="frame" x="0.0" y="239" width="404" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="9EO-Ka-IpY"/>
                                                 </constraints>
@@ -167,7 +175,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producida por: Warner Bros Pictures, Legendary Pictures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXR-7x-iSa">
-                                                <rect key="frame" x="0.0" y="284.5" width="404" height="20"/>
+                                                <rect key="frame" x="0.0" y="264" width="404" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="CcM-av-aVh"/>
                                                 </constraints>
@@ -240,6 +248,7 @@
                         <outlet property="popularityLabel" destination="SBg-Qh-vzy" id="blP-Bp-rr5"/>
                         <outlet property="productionLabel" destination="ZXR-7x-iSa" id="dO3-TN-kbz"/>
                         <outlet property="releaseDateLabel" destination="ACs-GR-FVa" id="0YF-zH-vUe"/>
+                        <outlet property="videoView" destination="aPD-Ge-dm7" id="qvr-3t-srr"/>
                         <outlet property="voteAverageLabel" destination="T4u-kT-JYW" id="TNn-qE-fg1"/>
                     </connections>
                 </viewController>
@@ -444,6 +453,7 @@
                         <outletCollection property="buttonsOutlet" destination="NlV-wW-mqb" collectionClass="NSMutableArray" id="6VA-9N-aCj"/>
                         <outletCollection property="buttonsOutlet" destination="KKe-Hl-TT7" collectionClass="NSMutableArray" id="Naw-0J-P4P"/>
                         <segue destination="VnI-ku-GkZ" kind="show" identifier="segueToEditProfile" id="fn2-Pb-Ivh"/>
+                        <segue destination="xp5-rF-hMW" kind="presentation" identifier="segueToMovies" modalPresentationStyle="fullScreen" id="Djj-ie-VVQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TB6-jC-Ne2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -551,6 +561,7 @@
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="trash" catalog="system" width="121" height="128"/>

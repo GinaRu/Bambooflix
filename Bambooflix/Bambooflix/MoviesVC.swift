@@ -19,6 +19,9 @@ class MoviesVC: UITableViewController {
     
     @IBOutlet var moviesTableView: UITableView!
     
+    
+    @IBOutlet var profileButton: UIBarButtonItem!
+    
     func configureCell() {
         let nib = UINib(nibName: reuseIdentifier, bundle: nil)
         moviesTableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
@@ -55,6 +58,15 @@ class MoviesVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCell()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if MoviesViewModel.selectedProfile == nil {
+            performSegue(withIdentifier: "segueToSelectionProfile", sender: nil)
+        }
+        guard let nameImage = MoviesViewModel.selectedProfile?.imageName else {return}
+        let image = UIImage(named: nameImage)
+        profileButton.image = image
     }
     
     
