@@ -108,13 +108,19 @@ class MoviesVC: UITableViewController {
             return "missing title"
         }
         return sectionType.name
-
-
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
     }
+    
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+//
+//                    headerView.backgroundColor = UIColor.black
+//
+//                return headerView
+//    }
     
 }
 

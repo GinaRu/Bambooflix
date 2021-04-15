@@ -14,18 +14,21 @@
         <scene sceneID="RQh-yu-yXu">
             <objects>
                 <tableViewController id="gzf-tC-1kL" customClass="MoviesVC" customModule="Bambooflix" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nYs-hn-DiI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="nYs-hn-DiI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="x1K-pW-uba">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x1K-pW-uba" id="nG9-Yg-Q4r">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -56,11 +59,11 @@
             <objects>
                 <viewController id="rcj-qf-heg" customClass="DetailVC" customModule="Bambooflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3EY-iY-v3A">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="kji-4b-ftW">
-                                <rect key="frame" x="5" y="93" width="404" height="764"/>
+                                <rect key="frame" x="5" y="5" width="404" height="764"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPD-Ge-dm7">
                                         <rect key="frame" x="0.0" y="0.0" width="404" height="227.5"/>
@@ -260,9 +263,15 @@
         <scene sceneID="3bM-wc-Q1j">
             <objects>
                 <navigationController id="xp5-rF-hMW" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xpQ-On-9F2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="xpQ-On-9F2">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="gzf-tC-1kL" kind="relationship" relationship="rootViewController" id="tio-Yg-Yfb"/>
@@ -276,7 +285,7 @@
         <scene sceneID="PhU-j6-cG5">
             <objects>
                 <navigationController id="nnT-U5-sB2" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x9w-qD-QII">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="x9w-qD-QII">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -297,11 +306,11 @@
             <objects>
                 <viewController id="Xk3-NH-H73" customClass="ProfileSelectionVC" customModule="Bambooflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tlw-zU-FXD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="gZG-sn-yy9">
-                                <rect key="frame" x="91" y="297.5" width="232" height="301"/>
+                                <rect key="frame" x="91" y="253.5" width="232" height="301"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="g27-xm-whb">
                                         <rect key="frame" x="0.0" y="0.0" width="232" height="125.5"/>
@@ -465,11 +474,11 @@
             <objects>
                 <viewController id="VnI-ku-GkZ" customClass="ProfileEditionVC" customModule="Bambooflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="II7-E2-p4X">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-3g-6ZI">
-                                <rect key="frame" x="119.5" y="313.5" width="175" height="269.5"/>
+                                <rect key="frame" x="119.5" y="269.5" width="175" height="269.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V48-En-0MY">
                                         <rect key="frame" x="0.0" y="0.0" width="175" height="125.5"/>
@@ -480,6 +489,9 @@
                                                 <state key="normal" image="pencil" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="100"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="g9G-dc-6c3" kind="show" id="mzh-sA-ufa"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAMBIAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKu-JA-vue">
                                                 <rect key="frame" x="0.0" y="102.5" width="175" height="23"/>
@@ -555,9 +567,100 @@
             </objects>
             <point key="canvasLocation" x="1093" y="741"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="gnM-gW-VDr">
+            <objects>
+                <viewController id="g9G-dc-6c3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N3G-wW-3R6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="ZE2-Q7-CpY">
+                                <rect key="frame" x="112" y="249" width="190" height="310"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Alc-9x-U7k">
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9X-kZ-1el">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="N9c-fV-j5R"/>
+                                                    <constraint firstAttribute="width" constant="70" id="hyU-tC-9cp"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="avatar_20_mini"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgW-pQ-IJU">
+                                                <rect key="frame" x="120" y="0.0" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="8C7-T8-v4K"/>
+                                                    <constraint firstAttribute="height" constant="70" id="YE6-0M-Jqh"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="avatar_20_mini"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="oBm-ME-6Se">
+                                        <rect key="frame" x="0.0" y="120" width="190" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcf-78-NmN">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="jBM-uV-9u7"/>
+                                                    <constraint firstAttribute="height" constant="70" id="nrb-R9-jhS"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="avatar_20_mini"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xql-vJ-dh1">
+                                                <rect key="frame" x="120" y="0.0" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="GJ5-bI-GZU"/>
+                                                    <constraint firstAttribute="height" constant="70" id="fbQ-gD-OMs"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="avatar_20_mini"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Bxq-0y-uel">
+                                        <rect key="frame" x="0.0" y="240" width="190" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAu-xK-aFX">
+                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="01Q-14-SRq"/>
+                                                    <constraint firstAttribute="height" constant="70" id="Ygk-8k-9yA"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="avatar_20_mini"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4f-EZ-5U9">
+                                                <rect key="frame" x="120" y="0.0" width="70" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="N9j-ZX-adS"/>
+                                                    <constraint firstAttribute="width" constant="70" id="T7j-Iy-5Gu"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="avatar_20_mini"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="53K-TL-sgY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZE2-Q7-CpY" firstAttribute="centerY" secondItem="N3G-wW-3R6" secondAttribute="centerY" id="aWE-bq-9dh"/>
+                            <constraint firstItem="ZE2-Q7-CpY" firstAttribute="centerX" secondItem="N3G-wW-3R6" secondAttribute="centerX" id="l1q-VP-FMw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vgc-gM-dIi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1866.6666666666667" y="740.625"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.down.to.line" catalog="system" width="128" height="128"/>
+        <image name="avatar_20_mini" width="50" height="50"/>
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="pencil" catalog="system" width="128" height="113"/>

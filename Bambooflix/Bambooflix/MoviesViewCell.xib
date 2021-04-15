@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,42 +24,42 @@
                                 <subviews>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a3U-zp-sUo">
                                         <rect key="frame" x="8" y="0.0" width="108" height="166"/>
-                                        <color key="backgroundColor" red="1" green="0.57097730560000004" blue="0.1965860029" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="movieTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="t1B-D7-1cL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kB-qW-8bV">
                                         <rect key="frame" x="120" y="0.0" width="108" height="166"/>
-                                        <color key="backgroundColor" red="1" green="0.54552437890000005" blue="0.4110569879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="movieTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="DXa-8x-gLT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSs-dC-OMN">
                                         <rect key="frame" x="232" y="0.0" width="107.5" height="166"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="movieTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bNI-kU-ZfN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8f-fH-Mhm">
                                         <rect key="frame" x="343.5" y="0.0" width="108" height="166"/>
-                                        <color key="backgroundColor" red="0.24692667779999999" green="0.40065831219999998" blue="0.25087358749999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="movieTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vPr-tO-2ED"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJX-2W-Tla">
                                         <rect key="frame" x="455.5" y="0.0" width="108" height="166"/>
-                                        <color key="backgroundColor" red="0.61630239600000003" green="1" blue="0.62615345759999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="movieTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QrQ-91-4uK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRF-Ip-CIx">
                                         <rect key="frame" x="567.5" y="0.0" width="108" height="166"/>
-                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="movieTouched:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Mev-tQ-Tav"/>
                                         </connections>
@@ -78,6 +77,7 @@
                                 </variation>
                             </stackView>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="n7Z-iM-obs" firstAttribute="trailing" secondItem="q5o-E3-yh8" secondAttribute="trailing" id="9bJ-Ij-9ea"/>
                             <constraint firstItem="n7Z-iM-obs" firstAttribute="leading" secondItem="q5o-E3-yh8" secondAttribute="leading" id="N0j-yW-R7u"/>
@@ -110,12 +110,4 @@
             <point key="canvasLocation" x="315.94202898550725" y="140.625"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
