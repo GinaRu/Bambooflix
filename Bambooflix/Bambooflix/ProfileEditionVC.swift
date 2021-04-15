@@ -36,6 +36,9 @@ class ProfileEditionVC: UIViewController {
                                                             {
                                                                 action in self.eliminarPerfil()
                                                                 self.nameTexfield.text = ""
+                                                                if let navController = self.navigationController {
+                                                                    navController.popViewController(animated: true)
+                                                                }
                                                                 
                                                             })
         
@@ -52,18 +55,18 @@ class ProfileEditionVC: UIViewController {
     
     @IBAction func guardarButton(_ sender: UIBarButtonItem) {
         
-        if let navController = self.navigationController {
-            navController.popViewController(animated: true)
-        }
-        
         if let id = ProfileViewModel.selectedProfileId
         {
             var name = nameTexfield.text ?? "Unknown"
             if name.isEmpty {
-                name = "AÑADIR"
+                name = "SIN NOMBRE"
             }
             let profile = Profile(id: id, name: name, imageName: "avatar_20_mini")
             profileManager.saveProfile(profile)
+        }
+        
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
         }
         
     }

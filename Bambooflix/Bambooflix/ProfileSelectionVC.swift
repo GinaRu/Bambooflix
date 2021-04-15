@@ -29,13 +29,17 @@ class ProfileSelectionVC: UIViewController {
         isEditModeEnabled = true
     }
   
+
     
     @IBAction func añadirPerfilTouched(_ sender: UIButton) {
-        if isEditModeEnabled == true {
+        let profile = currentProfiles.first{$0.id == sender.tag}
         ProfileViewModel.selectedProfileId = sender.tag
-       performSegue(withIdentifier: "segueToEditProfile", sender: nil)
-        } else {
-            print(sender.tag)
+        
+        if isEditModeEnabled == true && profile != nil{
+            performSegue(withIdentifier: "segueToEditProfile", sender: nil)
+        } else if isEditModeEnabled == false && profile == nil {
+            performSegue(withIdentifier: "segueToEditProfile", sender: nil)
+            
         }
     }
     
@@ -52,6 +56,12 @@ class ProfileSelectionVC: UIViewController {
         for l in nombrePerfilLabel {
             l.text = "AÑADIR"
         }
+        for b in buttonsOutlet {
+            let image = UIImage(systemName: "plus")
+            b.setImage(image, for: .normal)
+        }
+        
+
         currentProfiles = profileManager.readProfiles()
         for p in currentProfiles {
             if p.id == nombrePerfilLabel[p.id].tag {
@@ -64,7 +74,7 @@ class ProfileSelectionVC: UIViewController {
  
             }
         }
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         editarButtonOutlet.show()
         listoButtonOutlet.hide()
         isEditModeEnabled = false
