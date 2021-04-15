@@ -18,9 +18,8 @@ class MoviesVC: UITableViewController {
     private let reuseIdentifier = String(describing: MoviesViewCell.self)
     
     @IBOutlet var moviesTableView: UITableView!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    func configureCell() {
         let nib = UINib(nibName: reuseIdentifier, bundle: nil)
         moviesTableView.register(nib, forCellReuseIdentifier: reuseIdentifier)
         moviesManager.fetchMovieDiscover(success: { (movies) in
@@ -30,21 +29,7 @@ class MoviesVC: UITableViewController {
         
         moviesManager.fetchMovieDetails(movieId: 399566, success: { (movie) in
     })
-        
-
     }
-    
-    //performSegue(withIdentifier: "SegueToDetail", sender: nil)
- 
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
-    }
-    
-     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         return 1
-     }
-    
     func moviesForSection(_ section: Int) -> [Movie]  {
         var moviesSorted = [Movie]()
         if let movies = movies {
@@ -66,20 +51,32 @@ class MoviesVC: UITableViewController {
         }
       return moviesSorted
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureCell()
+    }
+    
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 5
+    }
+    
+     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         return 1
+     }
+    
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         let moviesCell = cell as! MoviesViewCell
-        
         let section = indexPath.section
-        
         guard let sectionType: SectionType = SectionType(rawValue: section) else {
             return cell
         }
         moviesCell.configure(with: moviesForSection(section), isRounded: sectionType.isCircular)
         moviesCell.delegate = self
-     
 
         return cell
      }
@@ -110,7 +107,6 @@ class MoviesVC: UITableViewController {
 }
 
 extension MoviesVC {
-    
     enum SectionType: Int, CaseIterable {
         case mostPopular, recentlyAdded, mostVoted, discover, internationalMovies
         
@@ -128,7 +124,6 @@ extension MoviesVC {
                 return "  Cine internacional"
             }
         }
-        
         var rowHeight: CGFloat {
             switch self {
             case .mostPopular:
@@ -157,7 +152,6 @@ extension MoviesVC {
             }
         }
     }
-    
 }
 
 extension MoviesVC: MoviesViewCellDelegate {
@@ -165,8 +159,7 @@ extension MoviesVC: MoviesViewCellDelegate {
         MoviesViewModel.selectedMovieId = movieId
         performSegue(withIdentifier: "SegueToDetail", sender: nil)
     }
-    
-    
+
 }
 
 

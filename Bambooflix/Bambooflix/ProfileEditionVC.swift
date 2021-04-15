@@ -11,6 +11,7 @@ import UIKit
 class ProfileEditionVC: UIViewController {
     
     let profileManager = ProfileManager()
+    
     func popNavigation() {
         if let navController = self.navigationController {
             navController.popViewController(animated: true)
@@ -69,6 +70,8 @@ class ProfileEditionVC: UIViewController {
         self.present(alert, animated: true)
     }
     
+    @IBOutlet var nameTexfield: UITextField!
+    
     @IBAction func cancelarButton(_ sender: UIBarButtonItem) {
        popNavigation()
     }
@@ -79,8 +82,6 @@ class ProfileEditionVC: UIViewController {
     @IBAction func eliminarButton(_ sender: Any) {
         alertaEliminar()
     }
-    @IBOutlet var nameTexfield: UITextField!
-    
     override func viewDidAppear(_ animated: Bool) {
      configureTextFieldEdition()
     }

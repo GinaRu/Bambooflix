@@ -16,24 +16,6 @@ class MoviesViewCell: UITableViewCell {
     var movies: [Movie] = []
     var delegate: MoviesViewCellDelegate?
     
-    @IBOutlet var constraintBoto: NSLayoutConstraint!
-    @IBOutlet var constraintBotoCuadrada: NSLayoutConstraint!
-    
-    @IBOutlet var boto1: UIButton!
-    @IBOutlet var boto2: UIButton!
-    @IBOutlet var boto3: UIButton!
-    @IBOutlet var boto4: UIButton!
-    @IBOutlet var boto5: UIButton!
-    @IBOutlet var boto6: UIButton!
-    
-    @IBAction func movieTouched(_ sender: UIButton) {
-       // print(movies[sender.tag].id)
-        if let delegate = delegate {
-            delegate.didSelectMovie(movieId: movies[sender.tag].id)
-        }
-    }
-    
- 
     func configure(with movies: [Movie], isRounded: Bool) {
         if isRounded == true {
             let round = boto1.frame.height / 2
@@ -63,19 +45,31 @@ class MoviesViewCell: UITableViewCell {
             self.movies = movies
         }
     }
-    
     func setImageAt(movie: Movie, button: UIButton) {
         if let url = URL(string: Endpoints.movieImage.rawValue + movie.posterPath) {
             button.af.setImage(for: .normal, url: url)
         }
     }
-
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-       
+    @IBOutlet var constraintBoto: NSLayoutConstraint!
+    @IBOutlet var constraintBotoCuadrada: NSLayoutConstraint!
+    
+    @IBOutlet var boto1: UIButton!
+    @IBOutlet var boto2: UIButton!
+    @IBOutlet var boto3: UIButton!
+    @IBOutlet var boto4: UIButton!
+    @IBOutlet var boto5: UIButton!
+    @IBOutlet var boto6: UIButton!
+    
+    @IBAction func movieTouched(_ sender: UIButton) {
+       // print(movies[sender.tag].id)
+        if let delegate = delegate {
+            delegate.didSelectMovie(movieId: movies[sender.tag].id)
+        }
     }
 
-
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
 }
