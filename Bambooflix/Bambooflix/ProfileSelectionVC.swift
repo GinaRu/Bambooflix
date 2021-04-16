@@ -47,7 +47,6 @@ class ProfileSelectionVC: UIViewController {
                 let image = UIImage(named: p.imageName)
                 buttonsOutlet[p.id].setBackgroundImage(image, for: .normal)
             }
- 
             }
         }
     

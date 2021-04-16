@@ -112,7 +112,18 @@ class ProfileEditionVC: UIViewController {
     
     @IBOutlet var pencilButtonOutlet: UIButton!
     
+    
+   
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        nameTexfield.resignFirstResponder()
+        view.becomeFirstResponder()
+    }
+    
+    
     override func viewDidLoad() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        view.addGestureRecognizer(tap)
+      
         currentProfile = profileManager.readProfiles().first{
             $0.id == ProfileViewModel.selectedProfileId
         }
