@@ -11,7 +11,7 @@ import UIKit
 class IconVC: UIViewController {
     
     
-    let imageNames: [String] = ["avatar_20_mini", "avatar_12_mini", "avatar_16_mini", "avatar_18_mini", "avatar_11_mini", "avatar_50_mini"]
+    let imageNames: [String] = ["avatar_20", "avatar_12", "avatar_16", "avatar_18", "avatar_11", "avatar_50"]
     
     func configureButtons() {
         var index = 0

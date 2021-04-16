@@ -65,7 +65,8 @@ class MoviesVC: UITableViewController {
             performSegue(withIdentifier: "segueToSelectionProfile", sender: nil)
         }
         guard let nameImage = MoviesViewModel.selectedProfile?.imageName else {return}
-        let image = UIImage(named: nameImage)
+        
+        let image = UIImage(named: "\(nameImage)" + "_mini")
         profileButton.image = image
     }
     
