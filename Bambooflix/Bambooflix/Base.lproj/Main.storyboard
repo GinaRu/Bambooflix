@@ -36,7 +36,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Movies" id="938-n6-G3i">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="person.crop.circle" catalog="system" style="plain" id="fIL-9v-Jy5">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="fIL-9v-Jy5">
                             <inset key="imageInsets" minX="0.0" minY="4" maxX="-15" maxY="-5"/>
                             <connections>
                                 <segue destination="nnT-U5-sB2" kind="presentation" identifier="segueToSelectionProfile" modalPresentationStyle="fullScreen" id="rww-Mf-OOj"/>
@@ -700,7 +700,6 @@
         <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
         <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="pencil" catalog="system" width="128" height="113"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="trash" catalog="system" width="121" height="128"/>
