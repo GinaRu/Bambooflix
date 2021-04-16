@@ -49,26 +49,29 @@ class ProfileEditionVC: UIViewController {
             if name.isEmpty {
                 name = "SIN NOMBRE"
             }
-            ///////////////////////////
-            if var profile = currentProfile {
-            if isEditingProfile() == true {
-                profile.name = name
-                profileManager.saveProfile(profile)
-                
-            } else {
-                let profile = Profile(id: id, name: name, imageName: "avatar_20_mini")
-                profileManager.saveProfile(profile)
-            }
-            }
+          
             
-//            if let imagename = IconVC.selectedAvatar {
-//
-//            let profile = Profile(id: id, name: name, imageName: imagename)
-//            profileManager.saveProfile(profile)
-//            } else {
-//                let profile = Profile(id: id, name: name, imageName: "avatar_20_mini")
-//                profileManager.saveProfile(profile)
-//            }
+            if isEditingProfile() == true {
+                if var profile = currentProfile {
+                profile.name = name
+                if let selectedAvatar = ProfileViewModel.selectedAvatar {
+                    profile.imageName = selectedAvatar
+                }
+                profileManager.saveProfile(profile)
+                }
+            } else {
+                var imageAvatar: String
+               
+                if let selectedAvatar = ProfileViewModel.selectedAvatar {
+                    imageAvatar = selectedAvatar
+                } else {
+               imageAvatar = "avatar_20_mini"
+                }
+                let profile = Profile(id: id, name: name, imageName: imageAvatar)
+                profileManager.saveProfile(profile)
+            }
+        } else {
+            print("No hi ha selectedProfileId")
         }
     }
     func alertaEliminar() {
@@ -122,11 +125,15 @@ class ProfileEditionVC: UIViewController {
         }
     
         if let image = ProfileViewModel.selectedAvatar {
-        pencilButtonOutlet.setImage(UIImage(named: image), for: .normal)
+            pencilButtonOutlet.setImage(nil, for: .normal
+            )
+        pencilButtonOutlet.setBackgroundImage(UIImage(named: image), for: .normal)
         } else if isEditingProfile() == true {
             guard let currentProfile = currentProfile  else { return
             }
-            pencilButtonOutlet.setImage(UIImage(named: currentProfile.imageName), for: .normal)
+            pencilButtonOutlet.setImage(nil, for: .normal
+            )
+            pencilButtonOutlet.setBackgroundImage(UIImage(named: currentProfile.imageName), for: .normal)
         } else {
             pencilButtonOutlet.setImage(UIImage(systemName: "pencil"), for: .normal
             )

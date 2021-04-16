@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -319,15 +318,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="95" height="125.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHt-9B-NNt">
-                                                        <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                                                        <rect key="frame" x="0.0" y="2" width="95" height="91"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="95" id="T6E-tg-vmp"/>
                                                             <constraint firstAttribute="height" constant="95" id="uGw-6W-EB2"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal">
-                                                            <imageReference key="image" image="plus" catalog="system" symbolScale="default"/>
+                                                        <state key="normal" backgroundImage="plus" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="100"/>
                                                         </state>
                                                         <connections>
@@ -346,15 +344,14 @@
                                                 <rect key="frame" x="115" y="0.0" width="95" height="125.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZd-kK-r0D">
-                                                        <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                                                        <rect key="frame" x="0.0" y="2" width="95" height="91"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="95" id="1GK-oI-n4q"/>
                                                             <constraint firstAttribute="height" constant="95" id="GcP-zf-60s"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal">
-                                                            <imageReference key="image" image="plus" catalog="system" symbolScale="default"/>
+                                                        <state key="normal" backgroundImage="plus" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="100"/>
                                                         </state>
                                                         <connections>
@@ -378,15 +375,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="95" height="125.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlV-wW-mqb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                                                        <rect key="frame" x="0.0" y="2" width="95" height="91"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="95" id="Xe4-V1-iA3"/>
                                                             <constraint firstAttribute="height" constant="95" id="g0C-4C-TEc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal">
-                                                            <imageReference key="image" image="plus" catalog="system" symbolScale="default"/>
+                                                        <state key="normal" backgroundImage="plus" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="100"/>
                                                         </state>
                                                         <connections>
@@ -405,15 +401,14 @@
                                                 <rect key="frame" x="115" y="0.0" width="95" height="125.5"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKe-Hl-TT7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="95" height="95"/>
+                                                        <rect key="frame" x="0.0" y="2" width="95" height="91"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="95" id="sxh-7z-uPg"/>
                                                             <constraint firstAttribute="width" constant="95" id="tBq-0s-4g3"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal">
-                                                            <imageReference key="image" image="plus" catalog="system" symbolScale="default"/>
+                                                        <state key="normal" backgroundImage="plus" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="100"/>
                                                         </state>
                                                         <connections>
@@ -481,27 +476,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-3g-6ZI">
-                                <rect key="frame" x="119.5" y="268" width="175" height="272"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QMV-3g-6ZI">
+                                <rect key="frame" x="119.5" y="263" width="175" height="282"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKe-1a-s7n">
+                                        <rect key="frame" x="40" y="0.0" width="95" height="95"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="95" id="XjM-PL-CwG"/>
+                                            <constraint firstAttribute="height" constant="95" id="pQF-hl-KJC"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="pencil" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="100"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="g9G-dc-6c3" kind="show" id="mzh-sA-ufa"/>
+                                        </connections>
+                                    </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="V48-En-0MY">
-                                        <rect key="frame" x="0.0" y="0.0" width="175" height="128"/>
+                                        <rect key="frame" x="46.5" y="115" width="82" height="23"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKe-1a-s7n">
-                                                <rect key="frame" x="0.0" y="0.0" width="175" height="95"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="95" id="pQF-hl-KJC"/>
-                                                </constraints>
-                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" image="pencil" catalog="system">
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="100"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="g9G-dc-6c3" kind="show" id="mzh-sA-ufa"/>
-                                                </connections>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAMBIAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKu-JA-vue">
-                                                <rect key="frame" x="0.0" y="105" width="175" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="82" height="23"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -509,7 +505,7 @@
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Escribe tu nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFi-Gq-iqA">
-                                        <rect key="frame" x="0.0" y="148" width="175" height="27"/>
+                                        <rect key="frame" x="0.0" y="158" width="175" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="0K0-X4-MVx"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="175" id="9dE-o7-v7G"/>
@@ -518,10 +514,10 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="i8K-Hy-NJR">
-                                        <rect key="frame" x="0.0" y="195" width="175" height="77"/>
+                                        <rect key="frame" x="27.5" y="205" width="120" height="77"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TODAS LAS EDADES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzB-xr-map">
-                                                <rect key="frame" x="27.5" y="0.0" width="120" height="25"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="25"/>
                                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="25" id="ZXp-u9-uag"/>
@@ -532,7 +528,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t50-6a-Vyl">
-                                                <rect key="frame" x="38" y="55" width="99.5" height="22"/>
+                                                <rect key="frame" x="10.5" y="55" width="99.5" height="22"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title=" ELIMINAR" image="trash" catalog="system"/>
@@ -678,6 +674,7 @@
                             <constraint firstItem="ZE2-Q7-CpY" firstAttribute="centerX" secondItem="N3G-wW-3R6" secondAttribute="centerX" id="l1q-VP-FMw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="EOo-sf-jMt"/>
                     <connections>
                         <outletCollection property="iconOutlet" destination="B9X-kZ-1el" collectionClass="NSMutableArray" id="qYa-ek-mNU"/>
                         <outletCollection property="iconOutlet" destination="NgW-pQ-IJU" collectionClass="NSMutableArray" id="IwL-fX-5Ng"/>

@@ -33,7 +33,7 @@ class ProfileSelectionVC: UIViewController {
         }
         for b in buttonsOutlet {
             let image = UIImage(systemName: "plus")
-            b.setImage(image, for: .normal)
+            b.setBackgroundImage(image, for: .normal)
         }
     }
     func configureProfileButtons() {
@@ -45,7 +45,6 @@ class ProfileSelectionVC: UIViewController {
             }
             if p.id == buttonsOutlet[p.id].tag {
                 let image = UIImage(named: p.imageName)
-                buttonsOutlet[p.id].setImage(UIImage(named: "no"), for: .normal)
                 buttonsOutlet[p.id].setBackgroundImage(image, for: .normal)
             }
  
