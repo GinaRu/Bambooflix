@@ -45,7 +45,8 @@ class ProfileSelectionVC: UIViewController {
             }
             if p.id == buttonsOutlet[p.id].tag {
                 let image = UIImage(named: p.imageName)
-                buttonsOutlet[p.id].setImage(image, for: .normal)
+                buttonsOutlet[p.id].setImage(UIImage(named: "no"), for: .normal)
+                buttonsOutlet[p.id].setBackgroundImage(image, for: .normal)
             }
  
             }
@@ -69,6 +70,7 @@ class ProfileSelectionVC: UIViewController {
     }
     
     @IBAction func añadirPerfilTouched(_ sender: UIButton) {
+        ProfileViewModel.reset()
         configureNavigationProfile(sender.tag)
     }
 

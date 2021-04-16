@@ -11,6 +11,7 @@ import UIKit
 class ProfileEditionVC: UIViewController {
     
     let profileManager = ProfileManager()
+    var currentProfile: Profile? = nil
     
     func popNavigation() {
         if let navController = self.navigationController {
@@ -48,8 +49,26 @@ class ProfileEditionVC: UIViewController {
             if name.isEmpty {
                 name = "SIN NOMBRE"
             }
-            let profile = Profile(id: id, name: name, imageName: "avatar_20_mini")
-            profileManager.saveProfile(profile)
+            ///////////////////////////
+            if var profile = currentProfile {
+            if isEditingProfile() == true {
+                profile.name = name
+                profileManager.saveProfile(profile)
+                
+            } else {
+                let profile = Profile(id: id, name: name, imageName: "avatar_20_mini")
+                profileManager.saveProfile(profile)
+            }
+            }
+            
+//            if let imagename = IconVC.selectedAvatar {
+//
+//            let profile = Profile(id: id, name: name, imageName: imagename)
+//            profileManager.saveProfile(profile)
+//            } else {
+//                let profile = Profile(id: id, name: name, imageName: "avatar_20_mini")
+//                profileManager.saveProfile(profile)
+//            }
         }
     }
     func alertaEliminar() {
@@ -70,6 +89,10 @@ class ProfileEditionVC: UIViewController {
         self.present(alert, animated: true)
     }
     
+    func isEditingProfile() -> Bool {
+        return currentProfile != nil
+    }
+    
     @IBOutlet var nameTexfield: UITextField!
     
     @IBAction func cancelarButton(_ sender: UIBarButtonItem) {
@@ -82,8 +105,36 @@ class ProfileEditionVC: UIViewController {
     @IBAction func eliminarButton(_ sender: Any) {
         alertaEliminar()
     }
+    
+    
+    @IBOutlet var pencilButtonOutlet: UIButton!
+    
+    override func viewDidLoad() {
+        currentProfile = profileManager.readProfiles().first{
+            $0.id == ProfileViewModel.selectedProfileId
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
-     configureTextFieldEdition()
+        configureTextFieldEdition()
+        if ProfileViewModel.selectedAvatar == nil {
+            print("selected avatar és nil") // el que teniem
+        }
+    
+        if let image = ProfileViewModel.selectedAvatar {
+        pencilButtonOutlet.setImage(UIImage(named: image), for: .normal)
+        } else if isEditingProfile() == true {
+            guard let currentProfile = currentProfile  else { return
+            }
+            pencilButtonOutlet.setImage(UIImage(named: currentProfile.imageName), for: .normal)
+        } else {
+            pencilButtonOutlet.setImage(UIImage(systemName: "pencil"), for: .normal
+            )
+        }
+        
+        
+ 
+       
     }
 
 }

@@ -11,5 +11,11 @@ import Foundation
 class ProfileViewModel {
     
 static var selectedProfileId: Int?
+static var selectedAvatar: String? = nil
+    
+  static  func reset() {
+        selectedProfileId = nil
+    selectedAvatar = nil
+    }
     
 }

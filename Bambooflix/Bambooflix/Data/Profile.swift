@@ -10,7 +10,7 @@ import UIKit
 
 struct Profile: Codable {
     let id: Int
-    let name: String
-    let imageName: String
+    var name: String
+    var imageName: String
     
 }
