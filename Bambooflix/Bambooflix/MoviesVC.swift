@@ -12,14 +12,10 @@ import AlamofireImage
 class MoviesVC: UITableViewController {
 
     private var movies: [Movie]?
-    
     let moviesManager = MoviesManager()
-    
     private let reuseIdentifier = String(describing: MoviesViewCell.self)
     
     @IBOutlet var moviesTableView: UITableView!
-    
-    
     @IBOutlet var profileButton: UIBarButtonItem!
     
     func configureCell() {
@@ -54,13 +50,7 @@ class MoviesVC: UITableViewController {
         }
       return moviesSorted
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureCell()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+    func configureProfileSelected() {
         if MoviesViewModel.selectedProfile == nil {
             performSegue(withIdentifier: "segueToSelectionProfile", sender: nil)
         }
@@ -68,17 +58,24 @@ class MoviesVC: UITableViewController {
         
         let image = UIImage(named: "\(nameImage)" + "_mini")
         profileButton.image = image
+
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureCell()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+       configureProfileSelected()
+    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return SectionType.allCases.count
     }
-    
      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          return 1
      }
-    
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
@@ -165,6 +162,7 @@ extension MoviesVC {
     }
 }
 
+// Protocolo para poder saber qué elemento de la Cell hemos pulsado:
 extension MoviesVC: MoviesViewCellDelegate {
     func didSelectMovie(movieId: Int) {
         MoviesViewModel.selectedMovieId = movieId

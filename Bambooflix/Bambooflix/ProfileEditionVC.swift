@@ -49,8 +49,7 @@ class ProfileEditionVC: UIViewController {
             if name.isEmpty {
                 name = "SIN NOMBRE"
             }
-          
-            
+
             if isEditingProfile() == true {
                 if var profile = currentProfile {
                 profile.name = name
@@ -91,50 +90,13 @@ class ProfileEditionVC: UIViewController {
         alert.addAction(removeAction)
         self.present(alert, animated: true)
     }
-    
     func isEditingProfile() -> Bool {
         return currentProfile != nil
     }
-    
-    @IBOutlet var nameTexfield: UITextField!
-    
-    @IBAction func cancelarButton(_ sender: UIBarButtonItem) {
-       popNavigation()
-    }
-    @IBAction func guardarButton(_ sender: UIBarButtonItem) {
-        crearGuardarPerfil()
-        popNavigation()
-    }
-    @IBAction func eliminarButton(_ sender: Any) {
-        alertaEliminar()
-    }
-    
-    
-    @IBOutlet var pencilButtonOutlet: UIButton!
-    
-    
-   
-    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        nameTexfield.resignFirstResponder()
-        view.becomeFirstResponder()
-    }
-    
-    
-    override func viewDidLoad() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        view.addGestureRecognizer(tap)
-      
-        currentProfile = profileManager.readProfiles().first{
-            $0.id == ProfileViewModel.selectedProfileId
-        }
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        configureTextFieldEdition()
+    func configureAvatar() {
         if ProfileViewModel.selectedAvatar == nil {
-            print("selected avatar és nil") // el que teniem
+            print("selected avatar és nil")
         }
-    
         if let image = ProfileViewModel.selectedAvatar {
             pencilButtonOutlet.setImage(nil, for: .normal
             )
@@ -149,10 +111,37 @@ class ProfileEditionVC: UIViewController {
             pencilButtonOutlet.setImage(UIImage(systemName: "pencil"), for: .normal
             )
         }
+    }
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        nameTexfield.resignFirstResponder()
+        view.becomeFirstResponder()
+    }
+    
+    @IBOutlet var nameTexfield: UITextField!
+    @IBAction func cancelarButton(_ sender: UIBarButtonItem) {
+       popNavigation()
+    }
+    @IBAction func guardarButton(_ sender: UIBarButtonItem) {
+        crearGuardarPerfil()
+        popNavigation()
+    }
+    @IBAction func eliminarButton(_ sender: Any) {
+        alertaEliminar()
+    }
+    @IBOutlet var pencilButtonOutlet: UIButton!
+   
+    override func viewDidLoad() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         
-        
- 
-       
+        view.addGestureRecognizer(tap)
+      
+        currentProfile = profileManager.readProfiles().first{
+            $0.id == ProfileViewModel.selectedProfileId
+        }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        configureTextFieldEdition()
+        configureAvatar()
     }
 
 }

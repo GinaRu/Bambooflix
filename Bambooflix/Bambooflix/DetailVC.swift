@@ -26,22 +26,19 @@ class DetailVC: UIViewController {
         self.budgetLabel.text = self.buildBudget(movie: movie.budget)
         self.overviewLabel.text = movie.overview
         self.genreLabel.text = self.buildGenreDescription(movie: movie.genres)
-        self.productionLabel.text = self.builProductionCompaniesDescription(movie: movie.productionCompanies)
+        self.productionLabel.text = self.buildProductionCompaniesDescription(movie: movie.productionCompanies)
         
         if let videoURL = movie.videoURL {
            configurePlayer(videoURL: videoURL)
         } else {
             debugPrint("Error: video URL invalid in \(#function)")
         }
-
     }
-    
     func configureDetails() {
         guard let movieID = movieID else { return }
         moviesManager.fetchMovieDetails(movieId: movieID) { (movie) in
             self.configureElements(movie)
         }
-        
     }
     func buildBudget(movie: Int) -> String {
         let budget = movie / 1000000
@@ -53,12 +50,11 @@ class DetailVC: UIViewController {
        
         return "Géneros: \(newList)"
     }
-    func builProductionCompaniesDescription(movie: [ProductionCompany]) -> String {
+    func buildProductionCompaniesDescription(movie: [ProductionCompany]) -> String {
         let stringProduction = movie.map{$0.name}
         let newList = stringProduction.joined(separator: ", ")
         return "Producida por: \(newList)"
     }
-    
     private func configurePlayer(videoURL: URL) {
         let player = AVPlayer(url: videoURL)
         let playerViewController = AVPlayerViewController()
