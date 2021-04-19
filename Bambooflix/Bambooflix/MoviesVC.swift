@@ -116,7 +116,7 @@ class MoviesVC: UITableViewController {
         guard let sectionType: SectionType = SectionType(rawValue: section) else {
             return cell
         }
-        moviesCell.configure(with: moviesForSection(section), isRounded: sectionType.isCircular)
+        moviesCell.configure(with: moviesForSection(section), isRounded: sectionType.isCircular, sectionHeight: sectionType.rowHeight)
         moviesCell.delegate = self
 
         return cell

@@ -16,9 +16,9 @@ class MoviesViewCell: UITableViewCell {
     var movies: [Movie] = []
     var delegate: MoviesViewCellDelegate?
     
-    func configure(with movies: [Movie], isRounded: Bool) {
+    func configure(with movies: [Movie], isRounded: Bool, sectionHeight: CGFloat) {
         if isRounded == true {
-            let round = boto1.frame.height / 2
+            let round = sectionHeight / 2
             constraintBoto.isActive = false
             constraintBotoCuadrada.isActive = true
             boto1.layer.cornerRadius = round
@@ -32,9 +32,22 @@ class MoviesViewCell: UITableViewCell {
         } else {
             constraintBoto.isActive = true
             constraintBotoCuadrada.isActive = false
+            boto1.layer.cornerRadius = 0
+            boto2.layer.cornerRadius = 0
+            boto3.layer.cornerRadius = 0
+            boto3.layer.cornerRadius = 0
+            boto4.layer.cornerRadius = 0
+            boto5.layer.cornerRadius = 0
+            boto6.layer.cornerRadius = 0
         }
         
         if movies.count >= 6 {
+            boto1.imageView?.contentMode = .scaleAspectFill
+            boto2.imageView?.contentMode = .scaleAspectFill
+            boto3.imageView?.contentMode = .scaleAspectFill
+            boto4.imageView?.contentMode = .scaleAspectFill
+            boto5.imageView?.contentMode = .scaleAspectFill
+            boto6.imageView?.contentMode = .scaleAspectFit
         setImageAt(movie: movies[0], button: boto1)
         setImageAt(movie: movies[1], button: boto2)
         setImageAt(movie: movies[2], button: boto3)
