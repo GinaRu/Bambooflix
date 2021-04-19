@@ -14,9 +14,16 @@ protocol MoviesViewCellDelegate {
 class MoviesViewCell: UITableViewCell {
     
     var movies: [Movie] = []
+    var buttons: [UIButton] = []
     var delegate: MoviesViewCellDelegate?
-    
+   
     func configure(with movies: [Movie], isRounded: Bool, sectionHeight: CGFloat) {
+        boto1.imageView?.contentMode = .scaleAspectFill
+        boto2.imageView?.contentMode = .scaleAspectFill
+        boto3.imageView?.contentMode = .scaleAspectFill
+        boto4.imageView?.contentMode = .scaleAspectFill
+        boto5.imageView?.contentMode = .scaleAspectFill
+        boto6.imageView?.contentMode = .scaleAspectFill
         if isRounded == true {
             let round = sectionHeight / 2
             constraintBoto.isActive = false
@@ -40,27 +47,28 @@ class MoviesViewCell: UITableViewCell {
             boto5.layer.cornerRadius = 0
             boto6.layer.cornerRadius = 0
         }
-        
-        if movies.count >= 6 {
-            boto1.imageView?.contentMode = .scaleAspectFill
-            boto2.imageView?.contentMode = .scaleAspectFill
-            boto3.imageView?.contentMode = .scaleAspectFill
-            boto4.imageView?.contentMode = .scaleAspectFill
-            boto5.imageView?.contentMode = .scaleAspectFill
-            boto6.imageView?.contentMode = .scaleAspectFit
-        setImageAt(movie: movies[0], button: boto1)
-        setImageAt(movie: movies[1], button: boto2)
-        setImageAt(movie: movies[2], button: boto3)
-        setImageAt(movie: movies[3], button: boto4)
-        setImageAt(movie: movies[4], button: boto5)
-        setImageAt(movie: movies[5], button: boto6)
-            
-            self.movies = movies
-        }
+        self.movies = movies
+        updateCoverImages()
+
     }
     func setImageAt(movie: Movie, button: UIButton) {
         if let url = URL(string: Endpoints.movieImage.rawValue + movie.posterPath) {
             button.af.setImage(for: .normal, url: url)
+            button.isHidden = false
+        }
+    }
+    
+    private func updateCoverImages() {
+        buttons = [boto1, boto2, boto3, boto4, boto5, boto6]
+        
+        buttons.forEach {
+            $0.setImage(nil, for: .normal)
+            $0.isHidden = true
+        }
+        
+        zip(movies, buttons).forEach{ (movie, button) in
+            setImageAt(movie: movie, button: button)
+            
         }
     }
     
@@ -75,7 +83,7 @@ class MoviesViewCell: UITableViewCell {
     @IBOutlet var boto6: UIButton!
     
     @IBAction func movieTouched(_ sender: UIButton) {
-       // print(movies[sender.tag].id)
+       
         if let delegate = delegate {
             delegate.didSelectMovie(movieId: movies[sender.tag].id)
         }
