@@ -71,7 +71,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Movies" id="938-n6-G3i">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="fIL-9v-Jy5">
-                            <inset key="imageInsets" minX="0.0" minY="4" maxX="-15" maxY="-5"/>
+                            <inset key="imageInsets" minX="0.0" minY="4" maxX="-7" maxY="-5"/>
                             <connections>
                                 <segue destination="nnT-U5-sB2" kind="presentation" identifier="segueToSelectionProfile" modalPresentationStyle="fullScreen" id="rww-Mf-OOj"/>
                             </connections>
