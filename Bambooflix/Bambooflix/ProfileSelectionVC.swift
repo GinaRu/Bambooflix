@@ -24,7 +24,7 @@ class ProfileSelectionVC: UIViewController {
             performSegue(withIdentifier: "segueToEditProfile", sender: nil)
         } else if isEditModeEnabled == false && profile != nil {
             MoviesViewModel.selectedProfile = profile
-            performSegue(withIdentifier: "segueToMovies", sender: nil)
+         dismiss(animated: true, completion: nil)
         }
     }
     func configureProfilesBeforeReading() {
@@ -72,7 +72,7 @@ class ProfileSelectionVC: UIViewController {
         configureNavigationProfile(sender.tag)
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         editarButtonOutlet.show()
         listoButtonOutlet.hide()
         isEditModeEnabled = false

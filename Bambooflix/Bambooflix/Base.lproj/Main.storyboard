@@ -18,9 +18,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="nUd-q7-XaF">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YMD-vV-Y9m">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="237"/>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="240" id="kGc-fx-vl0"/>
+                                    </constraints>
+                                    <state key="normal" title=" "/>
+                                    <connections>
+                                        <action selector="headerButton:" destination="gzf-tC-1kL" eventType="touchUpInside" id="OxR-MS-iss"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITOL PELICULA" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBZ-3u-bQw">
+                                    <rect key="frame" x="20" y="178.5" width="374" height="38.5"/>
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="28"/>
+                                    <color key="textColor" red="0.96177495548597847" green="1" blue="0.076038459439374151" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <size key="shadowOffset" width="3" height="-2"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="YMD-vV-Y9m" firstAttribute="leading" secondItem="nUd-q7-XaF" secondAttribute="leading" id="1s6-Xs-vKn"/>
+                                <constraint firstAttribute="trailing" secondItem="YMD-vV-Y9m" secondAttribute="trailing" id="5MT-yr-wy2"/>
+                                <constraint firstAttribute="bottom" secondItem="FBZ-3u-bQw" secondAttribute="bottom" constant="20" id="BhW-0F-YT5"/>
+                                <constraint firstItem="FBZ-3u-bQw" firstAttribute="leading" secondItem="nUd-q7-XaF" secondAttribute="leading" constant="20" id="Tmg-dN-ZIi"/>
+                                <constraint firstAttribute="bottom" secondItem="YMD-vV-Y9m" secondAttribute="bottom" id="VYD-HC-wiY"/>
+                                <constraint firstItem="YMD-vV-Y9m" firstAttribute="top" secondItem="nUd-q7-XaF" secondAttribute="top" id="XfV-ZH-JXs"/>
+                                <constraint firstAttribute="trailing" secondItem="FBZ-3u-bQw" secondAttribute="trailing" constant="20" id="gbe-cr-YZT"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="x1K-pW-uba">
-                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="292.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x1K-pW-uba" id="nG9-Yg-Q4r">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -44,6 +78,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="headerButtonOutlet" destination="YMD-vV-Y9m" id="jdI-80-EFJ"/>
+                        <outlet property="headerTitleLabel" destination="FBZ-3u-bQw" id="kMW-hM-fwV"/>
                         <outlet property="moviesTableView" destination="nYs-hn-DiI" id="Z41-zD-2oJ"/>
                         <outlet property="profileButton" destination="fIL-9v-Jy5" id="oxO-ad-zl0"/>
                         <segue destination="rcj-qf-heg" kind="show" identifier="SegueToDetail" id="Ygl-yU-Jv2"/>
@@ -51,7 +87,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nmT-XS-fAn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="297" y="21"/>
+            <point key="canvasLocation" x="295.6521739130435" y="20.758928571428569"/>
         </scene>
         <!--DetailVC-->
         <scene sceneID="2XK-pF-Ai9">
@@ -461,7 +497,6 @@
                         <outletCollection property="buttonsOutlet" destination="NlV-wW-mqb" collectionClass="NSMutableArray" id="6VA-9N-aCj"/>
                         <outletCollection property="buttonsOutlet" destination="KKe-Hl-TT7" collectionClass="NSMutableArray" id="Naw-0J-P4P"/>
                         <segue destination="VnI-ku-GkZ" kind="show" identifier="segueToEditProfile" id="fn2-Pb-Ivh"/>
-                        <segue destination="xp5-rF-hMW" kind="presentation" identifier="segueToMovies" modalPresentationStyle="fullScreen" id="Djj-ie-VVQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TB6-jC-Ne2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -563,6 +598,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="eliminarButtonOutlet" destination="t50-6a-Vyl" id="O6s-Zo-HSd"/>
                         <outlet property="nameTexfield" destination="IFi-Gq-iqA" id="BYa-jh-2GZ"/>
                         <outlet property="pencilButtonOutlet" destination="PKe-1a-s7n" id="97P-aF-6xM"/>
                     </connections>

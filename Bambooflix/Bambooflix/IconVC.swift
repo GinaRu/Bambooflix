@@ -21,7 +21,6 @@ class IconVC: UIViewController {
         }
     }
     
-    
     @IBOutlet var iconOutlet: [UIButton]!
     
     @IBAction func iconTouched(_ sender: UIButton) {

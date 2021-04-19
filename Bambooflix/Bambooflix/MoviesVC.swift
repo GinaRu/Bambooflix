@@ -15,6 +15,13 @@ class MoviesVC: UITableViewController {
     let moviesManager = MoviesManager()
     private let reuseIdentifier = String(describing: MoviesViewCell.self)
     
+    @IBAction func headerButton(_ sender: UIButton) {
+    }
+    
+    @IBOutlet var headerButtonOutlet: UIButton!
+    
+    @IBOutlet var headerTitleLabel: UILabel!
+    
     @IBOutlet var moviesTableView: UITableView!
     @IBOutlet var profileButton: UIBarButtonItem!
     
@@ -24,6 +31,14 @@ class MoviesVC: UITableViewController {
         moviesManager.fetchMovieDiscover(success: { (movies) in
             self.movies = movies.results
             self.tableView.reloadData()
+            guard let movies = self.movies else { return }
+            
+            let randomMovie = movies.randomElement()
+            
+            guard let randomM = randomMovie else {return}
+    
+            self.setImageAtHeader(movie: randomM, button: self.headerButtonOutlet)
+            self.headerTitleLabel.text = randomM.title
                     })
         
         moviesManager.fetchMovieDetails(movieId: 399566, success: { (movie) in
@@ -51,6 +66,8 @@ class MoviesVC: UITableViewController {
       return moviesSorted
     }
     func configureProfileSelected() {
+        self.tableView.isHidden = MoviesViewModel.selectedProfile == nil
+        
         if MoviesViewModel.selectedProfile == nil {
             performSegue(withIdentifier: "segueToSelectionProfile", sender: nil)
         }
@@ -61,18 +78,27 @@ class MoviesVC: UITableViewController {
 
     }
 
+    func setImageAtHeader(movie: Movie, button: UIButton) {
+        if let url = URL(string: Endpoints.movieImage.rawValue + movie.backdropPath) {
+            button.af.setBackgroundImage(for: .normal, url: url)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCell()
+        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
        configureProfileSelected()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return SectionType.allCases.count
     }
+    
      override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          return 1
      }
@@ -135,7 +161,7 @@ extension MoviesVC {
         var rowHeight: CGFloat {
             switch self {
             case .mostPopular:
-                return 300
+                return 250
             case .discover:
                 return 150
             case .recentlyAdded:

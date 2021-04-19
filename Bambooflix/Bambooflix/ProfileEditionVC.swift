@@ -112,12 +112,23 @@ class ProfileEditionVC: UIViewController {
             )
         }
     }
+    func hideEliminarButtonWhenNewProfile() {
+        if nameTexfield.text == "" || nameTexfield.text == "AÑADIR" {
+            eliminarButtonOutlet.isHidden = true
+        
+        } else {
+            eliminarButtonOutlet.isHidden = false
+        }
+
+    }
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
         nameTexfield.resignFirstResponder()
         view.becomeFirstResponder()
     }
     
     @IBOutlet var nameTexfield: UITextField!
+    
+    @IBOutlet var eliminarButtonOutlet: UIButton!
     @IBAction func cancelarButton(_ sender: UIBarButtonItem) {
        popNavigation()
     }
@@ -132,17 +143,16 @@ class ProfileEditionVC: UIViewController {
    
     override func viewDidLoad() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
-        
         view.addGestureRecognizer(tap)
       
         currentProfile = profileManager.readProfiles().first{
             $0.id == ProfileViewModel.selectedProfileId
         }
     }
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         configureTextFieldEdition()
         configureAvatar()
+        hideEliminarButtonWhenNewProfile()
     }
-
+  
 }
-
