@@ -33,9 +33,9 @@
                                         <action selector="headerButton:" destination="gzf-tC-1kL" eventType="touchUpInside" id="OxR-MS-iss"/>
                                     </connections>
                                 </button>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITOL PELICULA" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBZ-3u-bQw">
-                                    <rect key="frame" x="20" y="178.5" width="374" height="38.5"/>
-                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="28"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TíTOL PEL·LICULA" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="FBZ-3u-bQw">
+                                    <rect key="frame" x="20" y="182.5" width="374" height="34.5"/>
+                                    <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="25"/>
                                     <color key="textColor" red="0.96177495548597847" green="1" blue="0.076038459439374151" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <size key="shadowOffset" width="3" height="-2"/>
@@ -107,8 +107,8 @@
                                             <constraint firstAttribute="width" secondItem="aPD-Ge-dm7" secondAttribute="height" multiplier="16:9" id="0V0-Jf-uGO"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Títol película hunuhbuy u ubuyunun uniu" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z59-t1-aw1">
-                                        <rect key="frame" x="0.0" y="238.5" width="404" height="67"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cargando..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z59-t1-aw1">
+                                        <rect key="frame" x="0.0" y="238.5" width="404" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="U0c-Mx-1bE"/>
                                         </constraints>
@@ -117,7 +117,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="edB-7Z-oKR">
-                                        <rect key="frame" x="0.0" y="316.5" width="404" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="284.5" width="404" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularidad: 7618" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBg-Qh-vzy">
                                                 <rect key="frame" x="0.0" y="0.0" width="133.5" height="20.5"/>
@@ -163,7 +163,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JDw-MD-Zqp">
-                                        <rect key="frame" x="0.0" y="348" width="404" height="80"/>
+                                        <rect key="frame" x="0.0" y="316" width="404" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55m-2X-Izf">
                                                 <rect key="frame" x="0.0" y="0.0" width="404" height="35"/>
@@ -190,21 +190,20 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-JG-1kN">
-                                        <rect key="frame" x="0.0" y="439" width="404" height="284"/>
+                                        <rect key="frame" x="0.0" y="407" width="404" height="316"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kNA-cW-EMD">
-                                                <rect key="frame" x="0.0" y="0.0" width="404" height="234"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Cargando contenido..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kNA-cW-EMD">
+                                                <rect key="frame" x="0.0" y="0.0" width="404" height="266"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="wqi-vR-iqQ"/>
                                                 </constraints>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Géneros: Action, Science Fiction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcM-W4-WoP">
-                                                <rect key="frame" x="0.0" y="239" width="404" height="20"/>
+                                                <rect key="frame" x="0.0" y="271" width="404" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="9EO-Ka-IpY"/>
                                                 </constraints>
@@ -213,7 +212,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Producida por: Warner Bros Pictures, Legendary Pictures" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXR-7x-iSa">
-                                                <rect key="frame" x="0.0" y="264" width="404" height="20"/>
+                                                <rect key="frame" x="0.0" y="296" width="404" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="CcM-av-aVh"/>
                                                 </constraints>

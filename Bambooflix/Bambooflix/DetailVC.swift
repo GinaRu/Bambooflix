@@ -91,5 +91,6 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         configureDetails()
     }
+    
 
 }

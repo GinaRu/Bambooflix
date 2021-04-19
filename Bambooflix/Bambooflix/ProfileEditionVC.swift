@@ -21,13 +21,13 @@ class ProfileEditionVC: UIViewController {
     func configureTextFieldEdition() {
         if let id = ProfileViewModel.selectedProfileId {
             let profileList = profileManager.readProfiles()
+            if nameTexfield.text == "" {
             for p in profileList {
                 if id == p.id {
-                    if p.name == "AÑADIR" {
-                        nameTexfield.text = ""
-                    } else {
                         nameTexfield.text = p.name
-                    }
+                }
+                
+                    
                 }
             }
         }

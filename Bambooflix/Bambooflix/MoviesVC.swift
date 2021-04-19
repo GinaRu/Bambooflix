@@ -14,14 +14,14 @@ class MoviesVC: UITableViewController {
     private var movies: [Movie]?
     let moviesManager = MoviesManager()
     private let reuseIdentifier = String(describing: MoviesViewCell.self)
+    var headerMovieId = Int()
     
     @IBAction func headerButton(_ sender: UIButton) {
+     didSelectMovie(movieId: headerMovieId)
     }
     
     @IBOutlet var headerButtonOutlet: UIButton!
-    
     @IBOutlet var headerTitleLabel: UILabel!
-    
     @IBOutlet var moviesTableView: UITableView!
     @IBOutlet var profileButton: UIBarButtonItem!
     
@@ -31,6 +31,9 @@ class MoviesVC: UITableViewController {
         moviesManager.fetchMovieDiscover(success: { (movies) in
             self.movies = movies.results
             self.tableView.reloadData()
+            
+            
+            //Configuración imagen/ título header
             guard let movies = self.movies else { return }
             
             let randomMovie = movies.randomElement()
@@ -38,11 +41,13 @@ class MoviesVC: UITableViewController {
             guard let randomM = randomMovie else {return}
     
             self.setImageAtHeader(movie: randomM, button: self.headerButtonOutlet)
-            self.headerTitleLabel.text = randomM.title
+            self.headerTitleLabel.text = randomM.title.uppercased()
+            self.headerMovieId = randomM.id
+            
                     })
-        
-        moviesManager.fetchMovieDetails(movieId: 399566, success: { (movie) in
-    })
+//
+//        moviesManager.fetchMovieDetails(movieId: 399566, success: { (movie) in
+//    })
     }
     func moviesForSection(_ section: Int) -> [Movie]  {
         var moviesSorted = [Movie]()
