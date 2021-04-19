@@ -59,7 +59,6 @@ class MoviesViewCell: UITableViewCell {
     }
     
     private func updateCoverImages() {
-        buttons = [boto1, boto2, boto3, boto4, boto5, boto6]
         
         buttons.forEach {
             $0.setImage(nil, for: .normal)
@@ -83,13 +82,13 @@ class MoviesViewCell: UITableViewCell {
     @IBOutlet var boto6: UIButton!
     
     @IBAction func movieTouched(_ sender: UIButton) {
-       
         if let delegate = delegate {
             delegate.didSelectMovie(movieId: movies[sender.tag].id)
         }
     }
 
     override func awakeFromNib() {
+        buttons = [boto1, boto2, boto3, boto4, boto5, boto6]
         super.awakeFromNib()
     }
     
