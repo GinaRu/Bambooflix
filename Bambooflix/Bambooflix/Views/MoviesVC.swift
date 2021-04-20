@@ -45,9 +45,7 @@ class MoviesVC: UITableViewController {
             self.headerMovieId = randomM.id
             
                     })
-//
-//        moviesManager.fetchMovieDetails(movieId: 399566, success: { (movie) in
-//    })
+
     }
     func moviesForSection(_ section: Int) -> [Movie]  {
         var moviesSorted = [Movie]()
@@ -76,7 +74,7 @@ class MoviesVC: UITableViewController {
         if MoviesViewModel.selectedProfile == nil {
             performSegue(withIdentifier: "segueToSelectionProfile", sender: nil)
         }
-        guard let nameImage = MoviesViewModel.selectedProfile?.imageName else {return}
+        guard let nameImage = MoviesViewModel.selectedProfile?.imageName else { return }
         
         let image = UIImage(named: "\(nameImage)" + "_mini")
         profileButton.image = image
@@ -193,7 +191,7 @@ extension MoviesVC {
     }
 }
 
-// Protocolo para poder saber qué elemento de la Cell hemos pulsado:
+// Protocolo para poder saber qué button de la Cell hemos pulsado:
 extension MoviesVC: MoviesViewCellDelegate {
     func didSelectMovie(movieId: Int) {
         MoviesViewModel.selectedMovieId = movieId

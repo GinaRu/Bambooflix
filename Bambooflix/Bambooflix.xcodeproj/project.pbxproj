@@ -101,13 +101,22 @@
 		050757A1261DB8DF00B012EA /* Bambooflix */ = {
 			isa = PBXGroup;
 			children = (
-				050266112627286500AC3A7E /* Common */,
 				050757A2261DB8DF00B012EA /* AppDelegate.swift */,
 				050757A4261DB8DF00B012EA /* SceneDelegate.swift */,
 				050757AB261DB8E900B012EA /* Assets.xcassets */,
 				050757AD261DB8E900B012EA /* LaunchScreen.storyboard */,
 				050757B0261DB8E900B012EA /* Info.plist */,
+				050266112627286500AC3A7E /* Common */,
 				0542DDEC261DCA6D00739642 /* Views */,
+				05C0183C26207F150087A217 /* Managers */,
+				056A85FA261DEFE900675FE2 /* Data */,
+			);
+			path = Bambooflix;
+			sourceTree = "<group>";
+		};
+		0542DDEC261DCA6D00739642 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				050757A6261DB8DF00B012EA /* MoviesVC.swift */,
 				0584A5812624895C001C272A /* DetailVC.swift */,
 				056A85F7261DEF6400675FE2 /* MoviesViewModel.swift */,
@@ -118,15 +127,6 @@
 				05CA31AD2625BEF500C2416B /* ProfileViewModel.swift */,
 				0542DDE8261DCA6300739642 /* MoviesViewCell.xib */,
 				050757A8261DB8DF00B012EA /* Main.storyboard */,
-				05C0183C26207F150087A217 /* Managers */,
-				056A85FA261DEFE900675FE2 /* Data */,
-			);
-			path = Bambooflix;
-			sourceTree = "<group>";
-		};
-		0542DDEC261DCA6D00739642 /* Views */ = {
-			isa = PBXGroup;
-			children = (
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -85,7 +85,6 @@ class DetailVC: UIViewController {
              present(vc, animated: true)
     }
     
- 
     @IBOutlet var movieTitle: UILabel!
     @IBOutlet var popularityLabel: UILabel!
     @IBOutlet var releaseDateLabel: UILabel!
