@@ -77,6 +77,14 @@ class DetailVC: UIViewController {
         
         player.play()
     }
+    
+    func shareMovieRecomendation(){
+        guard let titleUnwraped = movieTitle.text else {return}
+          let titleText = "No te puedes perder \(titleUnwraped). ¡Puedes verla en la app Bambooflix!"
+             let vc = UIActivityViewController(activityItems: [titleText], applicationActivities: [])
+             present(vc, animated: true)
+    }
+    
  
     @IBOutlet var movieTitle: UILabel!
     @IBOutlet var popularityLabel: UILabel!
@@ -88,9 +96,15 @@ class DetailVC: UIViewController {
     @IBOutlet var productionLabel: UILabel!
     @IBOutlet var videoView: UIView!
     
+    @IBAction func shareButton(_ sender: UIButton) {
+     shareMovieRecomendation()
+    }
+    
     override func viewDidLoad() {
         configureDetails()
     }
     
 
 }
+
+

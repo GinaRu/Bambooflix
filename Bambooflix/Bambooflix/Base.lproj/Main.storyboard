@@ -252,6 +252,9 @@
                                                 <state key="normal" image="paperplane" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="shareButton:" destination="rcj-qf-heg" eventType="touchUpInside" id="qa9-4j-8eg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
